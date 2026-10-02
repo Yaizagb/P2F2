@@ -6,9 +6,17 @@ namespace P2F2
 {
     public class Funciones
     {
-        public static long CalcularFactorial(int n) 
+        public static long CalcularFactorial(int n)
         {
-            throw new NotImplementedException();
+            if (n < 0)
+                return -1;
+
+            long resultado = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                resultado *= i;
+            }
+            return resultado;
         }
 
         public static bool EsContrasenyaValida(string contrasenya)
