@@ -22,6 +22,7 @@ namespace P2F2_Tests
             long resultado = Funciones.CalcularFactorial(0);
             Assert.AreEqual(1, resultado);
         }
+        [TestMethod]
         public void TestCalcularFactorialNegativos()
         {
             long resultado = Funciones.CalcularFactorial(-3);
