@@ -27,5 +27,47 @@ namespace P2F2_Tests
             long resultado = Funciones.CalcularFactorial(-3);
             Assert.AreEqual(-1, resultado);
         }
+
+        [TestMethod]
+        public void TestContrasenyaNull()
+        {
+            Assert.IsFalse(Funciones.EsContrasenyaValida(null));
+        }
+
+        [TestMethod]
+        public void TestContrasenyaVacia()
+        {
+            Assert.IsFalse(Funciones.EsContrasenyaValida(""));
+        }
+
+        [TestMethod]
+        public void TestContrasenyaMenor8SinCancela()
+        {
+            Assert.IsFalse(Funciones.EsContrasenyaValida("abc1234"));
+        }
+
+        [TestMethod]
+        public void TestContrasenyaMayor8SinCancela()
+        {
+            Assert.IsFalse(Funciones.EsContrasenyaValida("abcdefgh"));
+        }
+
+        [TestMethod]
+        public void TestContrasenyaConCancelaPeroCorta()
+        {
+            Assert.IsFalse(Funciones.EsContrasenyaValida("#abc"));
+        }
+
+        [TestMethod]
+        public void TestContrasenyaValidaMinima()
+        {
+            Assert.IsTrue(Funciones.EsContrasenyaValida("abcdefg#"));
+        }
+
+        [TestMethod]
+        public void TestContrasenyaValida()
+        {
+            Assert.IsTrue(Funciones.EsContrasenyaValida("mi#clave123"));
+        }
     }
 }
