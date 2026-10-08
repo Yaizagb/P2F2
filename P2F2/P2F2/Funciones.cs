@@ -21,7 +21,7 @@ namespace P2F2
 
         public static bool EsContrasenyaValida(string contrasenya)
         {
-            throw new NotImplementedException();
+            return (!string.IsNullOrEmpty(contrasenya) && contrasenya.Length >= 8 && contrasenya.Contains("#"));
         }
     }
 }
